@@ -1,0 +1,16 @@
+use_oauth_services = scitokens
+
+executable = /opt/test-jobs/local-issuer-test.sh
+arguments = $(CLUSTER) $(PROCESS)
+should_transfer_files = always
+transfer_executable = true
+
+log = local-issuer-test.log
+output = local-issuer-test.$(CLUSTER).$(PROCESS).out
+error = local-issuer-test.$(CLUSTER).$(PROCESS).err
+
+request_cpus = 1
+request_memory = 64MB
+request_disk = 64MB
+
+queue 1
